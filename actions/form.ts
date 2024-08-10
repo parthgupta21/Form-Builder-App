@@ -1,6 +1,7 @@
 "use server"
 
 import prisma from "@/lib/prisma";
+import { formSchemaType } from "@/schemas/forms";
 import { currentUser } from "@clerk/nextjs/server";
 
 class UserNotFoundErr extends Error {}
@@ -39,4 +40,8 @@ export async function GetFormStats() {
 
     
 
+}
+
+export async function CreateForm(data: formSchemaType) {
+    console.log("NAME ON SERVER", data.name)
 }
